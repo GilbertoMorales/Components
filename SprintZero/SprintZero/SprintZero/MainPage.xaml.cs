@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Tools.Plugins.ExternalMaps;
 using Xamarin.Forms;
 
 namespace SprintZero
@@ -12,6 +8,12 @@ namespace SprintZero
         public MainPage()
         {
             InitializeComponent();
+            ButtonMapsExternal.Clicked += ButtonMapsExternal_Clicked;
+        }
+
+        private void ButtonMapsExternal_Clicked(object sender, System.EventArgs e)
+        {
+            DependencyService.Get<IExternalMaps>().NavigateTo("Xamarin", 25.640491, -100.280269) ;
         }
     }
 }
