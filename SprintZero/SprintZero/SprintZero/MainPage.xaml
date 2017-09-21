@@ -10,6 +10,11 @@
                 Text="Mapas externos" 
                 TextColor="White"
                 BackgroundColor="Green"></Button>
+
+        <Button x:Name="ButtonOAuth"
+                Text="Xamarin OAuth" 
+                TextColor="White"
+                BackgroundColor="Green"></Button>
     </StackLayout>
 
 </ContentPage>

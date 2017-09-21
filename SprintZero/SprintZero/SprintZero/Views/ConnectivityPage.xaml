@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SprintZero.Views.ConnectivityPage"
+             xmlns:ViewModel="clr-namespace:SprintZero.ViewModels;assembly=SprintZero"
+             xmlns:Converter="clr-namespace:SprintZero.ValueConverters;assembly=SprintZero"
+             BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+        <ViewModel:ConnectivityViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converter:BooleanoAString x:Key="booleanAString" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <StackLayout VerticalOptions="FillAndExpand">
+
+        <Label  Text="{Binding IsSupport, Converter={StaticResource booleanAString}}"
+               TextColor="Black"
+               FontSize="Large"
+               HorizontalTextAlignment="Center"/>
+
+        <StackLayout VerticalOptions="CenterAndExpand"
+                     Padding="10">
+
+            <Label Text="{Binding IsConneted}"
+                TextColor="Black"
+               FontSize="Medium"/>
+            <Label Text="{Binding BandWidths}"
+                TextColor="Black"
+               FontSize="Medium"/>
+            <Label Text="{Binding ConnectionTypes}"
+                TextColor="Black"
+               FontSize="Medium"/>
+
+        </StackLayout>
+
+        <Button Text="Connectivity Test"
+                TextColor="White"
+                Command="{Binding CommandTets}"
+                VerticalOptions="EndAndExpand"
+                BackgroundColor="Green"
+                BorderRadius="0"/>
+
+    </StackLayout>
+
+</ContentPage>

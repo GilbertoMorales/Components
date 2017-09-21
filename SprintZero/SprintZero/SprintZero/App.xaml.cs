@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using SprintZero.Views;
 using Xamarin.Forms;
 
 namespace SprintZero
@@ -13,7 +9,7 @@ namespace SprintZero
         {
             InitializeComponent();
 
-            MainPage = new SprintZero.MainPage();
+            MainPage = new RootTabs();
         }
 
         protected override void OnStart()
